@@ -1,0 +1,39 @@
+{
+  "Fleet-Client-99": {
+    "hostname": "Fleet-Client-99",
+    "remote_ip": "127.0.0.1",
+    "os": {},
+    "cpu_percent": 22.0,
+    "ram_percent": 55.0,
+    "ram_total_gb": 0,
+    "disks": [],
+    "health_score": 90,
+    "findings_count": 0,
+    "findings": [],
+    "hung_apps_count": 0,
+    "last_seen_ts": 1795125011.48073,
+    "last_seen_iso": "2026-11-20T03:20:11",
+    "status": "Online"
+  },
+  "Test-Client-Node-01": {
+    "hostname": "Test-Client-Node-01",
+    "remote_ip": "192.168.1.150",
+    "os": {},
+    "cpu_percent": 15.0,
+    "ram_percent": 42.0,
+    "ram_total_gb": 16.0,
+    "disks": [
+      {
+        "mount": "C:\\",
+        "percent": 40
+      }
+    ],
+    "health_score": 98,
+    "findings_count": 0,
+    "findings": [],
+    "hung_apps_count": 0,
+    "last_seen_ts": 1795123336.236638,
+    "last_seen_iso": "2026-11-20T02:52:16",
+    "status": "Online"
+  }
+}

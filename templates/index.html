@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SelfHeal IT — Windows PC Health &amp; Autonomous Recovery Platform</title>
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+
+  <!-- Left Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="logo-text">
+        <h2>SelfHeal IT</h2>
+        <span>Platform</span>
+      </div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item active" data-tab="tab-scanner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        PC Scanner
+      </li>
+      <li class="nav-item" data-tab="tab-assistant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        AI Assistant
+      </li>
+      <li class="nav-item" data-tab="tab-monitoring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Live Monitoring
+      </li>
+      <li class="nav-item" data-tab="tab-healing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Self-Healing
+      </li>
+      <li class="nav-item" data-tab="tab-security">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Security &amp; Defender
+      </li>
+      <li class="nav-item" data-tab="tab-network">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Network Diagnostics
+      </li>
+      <li class="nav-item" data-tab="tab-multipc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        Multi-PC Fleet
+      </li>
+      <li class="nav-item" data-tab="tab-reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Reports
+      </li>
+      <li class="nav-item" data-tab="tab-settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+        <span>Engine Status</span>
+        <span class="status-indicator"><span class="dot-pulse"></span> Active</span>
+      </div>
+      <div>Local Host: <code>127.0.0.1:5000</code></div>
+    </div>
+  </aside>
+
+  <!-- Main Content Viewport -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div>
+        <h1 id="page-title">PC Health Scanner</h1>
+      </div>
+      <div class="header-actions">
+        <button id="btn-top-scan" class="btn btn-primary" onclick="runScan()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Run System Scan
+        </button>
+        <a href="/api/export/pdf" class="btn btn-secondary btn-sm" title="Download PDF Report">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          PDF
+        </a>
+        <a href="/api/export/json" class="btn btn-secondary btn-sm" title="Download JSON Telemetry">
+          JSON
+        </a>
+      </div>
+    </header>
+
+    <main class="content-pane">
+
+      <!-- ==================== 1. SCANNER TAB ==================== -->
+      <section id="tab-scanner" class="tab-content active">
+        <!-- Alert Banner (Hung Apps or Critical Issues) -->
+        <div id="scanner-alert" class="alert-banner" style="display: none;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="badge badge-high">ALERT</span>
+            <span id="scanner-alert-msg">Critical system issues require attention.</span>
+          </div>
+          <button class="btn btn-danger btn-sm" onclick="switchTab('tab-healing')">Resolve in Self-Healing</button>
+        </div>
+
+        <!-- Top Metric Summary Cards -->
+        <div class="grid-cards">
+          <!-- PC Health Score -->
+          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+            <div id="health-score-gauge" class="score-badge">--</div>
+            <div>
+              <div class="card-title">PC Health Score</div>
+              <div id="health-score-verdict" style="font-size: 15px; font-weight: 700; color: #fff;">Awaiting Scan</div>
+              <div id="health-score-sub" class="card-sub">Read-only diagnostic audit</div>
+            </div>
+          </div>
+
+          <!-- CPU Card -->
+          <div class="card">
+            <div class="card-title">
+              <span>Processor</span>
+              <span id="cpu-load-badge">--%</span>
+            </div>
+            <div id="card-cpu-name" class="card-value" style="font-size: 15px; margin-bottom: 2px;">Scanning...</div>
+            <div id="card-cpu-sub" class="card-sub">Cores / Clock</div>
+            <div class="progress-bar-bg"><div id="cpu-progress" class="progress-fill" style="width: 0%;"></div></div>
+          </div>
+
+          <!-- RAM Card -->
+          <div class="card">
+            <div class="card-title">
+              <span>System Memory</span>
+              <span id="ram-pct-badge">--%</span>
+            </div>
+            <div id="card-ram-val" class="card-value" style="font-size: 18px; margin-bottom: 2px;">-- GB / -- GB</div>
+            <div id="card-ram-sub" class="card-sub">Available: -- GB</div>
+            <div class="progress-bar-bg"><div id="ram-progress" class="progress-fill" style="width: 0%;"></div></div>
+          </div>
+
+          <!-- Primary Storage Card -->
+          <div class="card">
+            <div class="card-title">
+              <span>Primary Storage</span>
+              <span id="disk-pct-badge">--%</span>
+            </div>
+            <div id="card-disk-val" class="card-value" style="font-size: 18px; margin-bottom: 2px;">-- GB Free</div>
+            <div id="card-disk-sub" class="card-sub">Capacity: -- GB</div>
+            <div class="progress-bar-bg"><div id="disk-progress" class="progress-fill" style="width: 0%;"></div></div>
+          </div>
+        </div>
+
+        <!-- System Overview Hardware Specs Bar -->
+        <div class="card" style="margin-bottom: 24px;">
+          <div class="card-title">System &amp; Hardware Identity</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; font-size: 13px;">
+            <div><span style="color: var(--text-muted);">Operating System:</span><br><b id="spec-os">Loading...</b></div>
+            <div><span style="color: var(--text-muted);">Graphics Card (GPU):</span><br><b id="spec-gpu">Loading...</b></div>
+            <div><span style="color: var(--text-muted);">System Uptime:</span><br><b id="spec-uptime">Loading...</b></div>
+            <div><span style="color: var(--text-muted);">Active Processes:</span><br><b id="spec-procs">Loading...</b></div>
+            <div><span style="color: var(--text-muted);">Wi-Fi / Network:</span><br><b id="spec-wifi">Loading...</b></div>
+            <div><span style="color: var(--text-muted);">Battery / Power:</span><br><b id="spec-power">Loading...</b></div>
+          </div>
+        </div>
+
+        <!-- Diagnostic Findings & Issues Section -->
+        <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between;">
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700;">Diagnostic Findings &amp; Issues (<span id="findings-count">0</span>)</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Recommended recovery actions require explicit confirmation</span>
+        </div>
+        <div id="findings-container">
+          <p style="color: var(--text-muted);">Click "Run System Scan" to analyze CPU, memory, storage, security, and hung applications.</p>
+        </div>
+
+        <div class="disclaimer-box">
+          <b>Diagnostic Disclosure:</b> SelfHeal IT scans are 100% read-only. No system modifications are made without your explicit review and confirmation. SelfHeal IT complements Windows Defender and built-in Windows diagnostics.
+        </div>
+      </section>
+
+      <!-- ==================== 2. AI ASSISTANT TAB ==================== -->
+      <section id="tab-assistant" class="tab-content">
+        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Scan-Grounded PC Health Assistant</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Answers troubleshooting queries, evaluates bottlenecks, and checks game/software compatibility using real telemetry.</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary btn-sm" onclick="openCompatibilityModal()">Hardware Compatibility</button>
+            <button class="btn btn-secondary btn-sm" onclick="askBottlenecks()">Analyze Bottlenecks</button>
+          </div>
+        </div>
+
+        <div class="chat-container">
+          <div id="chat-stream" class="chat-messages">
+            <div class="chat-msg chat-msg-bot">
+              <span class="chat-tag">System Assistant</span><br>
+              Hello. I am connected directly to your live PC telemetry. You can ask diagnostic questions, inquire why your computer is running slow, request bottleneck analysis, or verify compatibility for demanding software and games.
+            </div>
+          </div>
+
+          <!-- Suggested Query Chips -->
+          <div class="chat-chips">
+            <span class="chip" onclick="sendQuickPrompt('What is my biggest system bottleneck?')">System Bottlenecks</span>
+            <span class="chip" onclick="sendQuickPrompt('Can I run Valorant?')">Can I run Valorant?</span>
+            <span class="chip" onclick="sendQuickPrompt('Can I run GTA V?')">Can I run GTA V?</span>
+            <span class="chip" onclick="sendQuickPrompt('Can I run Cyberpunk 2077?')">Can I run Cyberpunk 2077?</span>
+            <span class="chip" onclick="sendQuickPrompt('Can I run Adobe Premiere Pro?')">Can I run Premiere Pro?</span>
+            <span class="chip" onclick="sendQuickPrompt('Why is my PC slow?')">Why is my PC slow?</span>
+            <span class="chip" onclick="sendQuickPrompt('How is my RAM usage?')">RAM Utilization</span>
+            <span class="chip" onclick="sendQuickPrompt('Is my Windows Defender secure?')">Windows Defender Status</span>
+          </div>
+
+          <div class="chat-input-row">
+            <input id="chat-input" placeholder="Ask a PC health question, hardware check, or game title..." onkeydown="if(event.key==='Enter')sendChatMessage()">
+            <button class="btn btn-primary" onclick="sendChatMessage()">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3. LIVE MONITORING TAB ==================== -->
+      <section id="tab-monitoring" class="tab-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Real-Time Performance Telemetry</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Live background sampling every 2 seconds. Hardware-accelerated canvas trend graph.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="status-indicator"><span class="dot-pulse"></span> Streaming</span>
+            <button class="btn btn-secondary btn-sm" onclick="runLoopDemo()">Run Infinite-Loop Demo</button>
+          </div>
+        </div>
+
+        <!-- Hung App Detection Alert -->
+        <div id="monitoring-hung-alert" class="alert-banner" style="display: none;">
+          <div>
+            <span class="badge badge-high" style="margin-right: 8px;">FROZEN APP</span>
+            <span id="monitoring-hung-text">An application has stopped responding to Windows messages.</span>
+          </div>
+          <button id="btn-terminate-hung" class="btn btn-danger btn-sm">Terminate Process</button>
+        </div>
+
+        <!-- Metric Snapshot Cards -->
+        <div class="grid-cards" style="margin-bottom: 20px;">
+          <div class="card">
+            <div class="card-title">Live CPU Usage</div>
+            <div id="live-cpu-val" class="card-value" style="color: var(--cyan-primary);">--%</div>
+            <div class="card-sub">Sampled in real-time</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Live RAM Usage</div>
+            <div id="live-ram-val" class="card-value" style="color: #38bdf8;">--%</div>
+            <div id="live-ram-sub" class="card-sub">-- GB / -- GB</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Network Download (In)</div>
+            <div id="live-net-in-val" class="card-value" style="color: var(--emerald-primary);">-- KB/s</div>
+            <div class="card-sub">Throughput</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Network Upload (Out)</div>
+            <div id="live-net-out-val" class="card-value" style="color: var(--indigo-primary);">-- KB/s</div>
+            <div class="card-sub">Throughput</div>
+          </div>
+        </div>
+
+        <!-- Real-Time Charts -->
+        <div class="chart-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-size: 13px; font-weight: 600; color: #fff;">CPU &amp; Memory Utilization History (Last 60 samples)</span>
+            <div style="display: flex; gap: 16px; font-size: 12px;">
+              <span style="color: var(--cyan-primary); font-weight: 600;">CPU %</span>
+              <span style="color: #6366f1; font-weight: 600;">RAM %</span>
+            </div>
+          </div>
+          <canvas id="chart-cpu-ram" class="live-chart"></canvas>
+        </div>
+
+        <!-- Live Top Processes -->
+        <div style="margin-top: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="margin: 0; font-size: 15px; font-weight: 700;">Active Processes (Resource Utilization)</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Refreshed every 2 seconds</span>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>PID</th>
+                  <th>Application Name</th>
+                  <th>CPU %</th>
+                  <th>Memory %</th>
+                  <th>Memory (MB)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="live-processes-tbody">
+                <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Sampling process table...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Infinite Loop Demo Output -->
+        <div id="loop-demo-container" class="card" style="margin-top: 20px; display: none;">
+          <div class="card-title">Infinite-Loop Execution Log</div>
+          <pre id="loop-demo-output" style="margin: 0;"></pre>
+        </div>
+      </section>
+
+      <!-- ==================== 4. SELF-HEALING TAB ==================== -->
+      <section id="tab-healing" class="tab-content">
+        <div style="margin-bottom: 16px;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Safe, User-Approved Recovery Actions</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Predefined routines with pre-execution checks, confirmation requirements, post-verification, and audit logging.</span>
+        </div>
+
+        <!-- Action Grid -->
+        <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Action 1: Clean Temp Files -->
+          <div class="card">
+            <div class="card-title">
+              <span>Storage Cleanup</span>
+              <span class="badge badge-low">Safe</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Delete Temp Files (>24h)</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Purges accumulated temporary files older than 1 day in the Windows Temp folder. Safely skips any active files in use.
+            </p>
+            <button class="btn btn-primary btn-sm" onclick="promptHealAction('clean_temp', 'Delete Temp Files (>24h)')">Execute Action</button>
+          </div>
+
+          <!-- Action 2: Flush DNS -->
+          <div class="card">
+            <div class="card-title">
+              <span>Network Resolver</span>
+              <span class="badge badge-low">Safe</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Flush DNS Resolver Cache</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Clears corrupted DNS lookup entries via <code>ipconfig /flushdns</code> to repair broken website connections and domain errors.
+            </p>
+            <button class="btn btn-primary btn-sm" onclick="promptHealAction('flush_dns', 'Flush DNS Cache')">Execute Action</button>
+          </div>
+
+          <!-- Action 3: Restart Print Spooler -->
+          <div class="card">
+            <div class="card-title">
+              <span>Printer Service</span>
+              <span class="badge badge-low">Safe</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Restart Print Spooler</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Cycles the Windows <code>spoolsv</code> background service to resolve stuck, frozen, or non-printing documents.
+            </p>
+            <button class="btn btn-primary btn-sm" onclick="promptHealAction('clear_print_spooler', 'Restart Print Spooler')">Execute Action</button>
+          </div>
+
+          <!-- Action 4: Empty Recycle Bin -->
+          <div class="card">
+            <div class="card-title">
+              <span>Drive Capacity</span>
+              <span class="badge badge-medium">Irreversible</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Empty Windows Recycle Bin</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Permanently clears deleted files from the Windows Recycle Bin to recover drive storage space.
+            </p>
+            <button class="btn btn-secondary btn-sm" onclick="promptHealAction('empty_recycle_bin', 'Empty Windows Recycle Bin')">Execute Action</button>
+          </div>
+
+          <!-- Action 5: Renew Network DHCP -->
+          <div class="card">
+            <div class="card-title">
+              <span>Network Adapter</span>
+              <span class="badge badge-low">Safe</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Renew DHCP Network Lease</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Requests a fresh IP lease from your router via <code>ipconfig /renew</code> to resolve IP conflicts and Wi-Fi drops.
+            </p>
+            <button class="btn btn-primary btn-sm" onclick="promptHealAction('reset_network', 'Renew Network IP Lease')">Execute Action</button>
+          </div>
+
+          <!-- Action 6: Terminate Frozen Window -->
+          <div class="card">
+            <div class="card-title">
+              <span>Window Manager</span>
+              <span class="badge badge-high">Moderate</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Terminate Unresponsive App</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Terminates a frozen or hung application window by its Process ID (PID). Protected system binaries cannot be killed.
+            </p>
+            <button class="btn btn-danger btn-sm" onclick="promptTerminateAppManual()">Terminate by PID</button>
+          </div>
+        </div>
+
+        <!-- Recent Healing Activity Audit Log -->
+        <div style="margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="margin: 0; font-size: 15px; font-weight: 700;">Permanent Activity Audit Log (<code>activity_log.jsonl</code>)</h3>
+            <button class="btn btn-secondary btn-sm" onclick="loadHealingLogs()">Refresh Log</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Event</th>
+                  <th>Action</th>
+                  <th>Verified Result</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody id="healing-logs-tbody">
+                <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Loading audit history...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 5. SECURITY & DEFENDER TAB ==================== -->
+      <section id="tab-security" class="tab-content">
+        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Windows Defender &amp; Threat Intelligence</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Real-time Defender status, suspicious process inspection, and open port security audit.</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="loadSecurityData()">Refresh Security Telemetry</button>
+        </div>
+
+        <!-- Defender Status Card -->
+        <div class="card" style="margin-bottom: 20px;">
+          <div class="card-title">
+            <span>Microsoft Defender Antivirus Status</span>
+            <span id="defender-status-badge" class="badge badge-low">Checking...</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 13px; margin-top: 10px;">
+            <div><span style="color: var(--text-muted);">Real-Time Protection:</span><br><b id="sec-def-realtime">--</b></div>
+            <div><span style="color: var(--text-muted);">Antivirus Service:</span><br><b id="sec-def-service">--</b></div>
+            <div><span style="color: var(--text-muted);">Signature Version:</span><br><b id="sec-def-sigver">--</b></div>
+            <div><span style="color: var(--text-muted);">Definitions Age:</span><br><b id="sec-def-sigage">--</b></div>
+          </div>
+          <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 12px; color: var(--text-muted);">Execute Windows Defender Quick Scan:</span>
+            <button class="btn btn-primary btn-sm" onclick="promptDefenderScan()">Start Defender Quick Scan</button>
+          </div>
+        </div>
+
+        <!-- Suspicious Processes Inspection -->
+        <div class="card" style="margin-bottom: 20px;">
+          <div class="card-title">Suspicious Process Heuristic Audit</div>
+          <div id="suspicious-procs-list">
+            <p style="color: var(--text-muted); font-size: 13px;">Analyzing running processes...</p>
+          </div>
+        </div>
+
+        <!-- Open Ports & Connections Audit -->
+        <div class="card">
+          <div class="card-title">
+            <span>Open Listening Network Ports</span>
+            <span id="open-ports-count" style="color: #fff; font-size: 12px;">-- Ports</span>
+          </div>
+          <div class="table-container" style="max-height: 280px; overflow-y: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Port</th>
+                  <th>IP Address</th>
+                  <th>PID</th>
+                  <th>Associated Process</th>
+                  <th>Security Risk Assessment</th>
+                </tr>
+              </thead>
+              <tbody id="ports-tbody">
+                <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Scanning open sockets...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 6. NETWORK DIAGNOSTICS TAB ==================== -->
+      <section id="tab-network" class="tab-content">
+        <div style="margin-bottom: 16px;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Network Connectivity &amp; Diagnostics</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Inspect Wi-Fi signal quality, network socket states, and run URL security diagnostics.</span>
+        </div>
+
+        <div class="grid-cards">
+          <!-- Wi-Fi Card -->
+          <div class="card">
+            <div class="card-title">Wi-Fi Wireless Network</div>
+            <div id="net-wifi-ssid" class="card-value" style="font-size: 18px;">--</div>
+            <div id="net-wifi-details" class="card-sub">Signal: -- | Radio: --</div>
+          </div>
+
+          <!-- Socket Connections Card -->
+          <div class="card">
+            <div class="card-title">Active Sockets</div>
+            <div id="net-established-val" class="card-value" style="font-size: 18px;">-- Established</div>
+            <div id="net-listening-val" class="card-sub">-- Listening ports</div>
+          </div>
+
+          <!-- Resolver Status Tool -->
+          <div class="card">
+            <div class="card-title">DNS Resolver Status</div>
+            <div id="net-dns-status" class="card-value" style="font-size: 18px; color: var(--emerald-primary);">Operational</div>
+            <div class="card-sub">Local resolver responsive</div>
+          </div>
+        </div>
+
+        <!-- URL Safety Checker Tool -->
+        <div class="card" style="margin-top: 10px;">
+          <div class="card-title">Instant Phishing &amp; Malicious URL Scanner</div>
+          <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px;">
+            Test any website URL against the SelfHeal IT heuristic engine for phishing patterns, Punycode homoglyphs, and deceptive domains.
+          </p>
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+            <input id="net-url-input" style="flex: 1; background: var(--bg-input); border: 1px solid var(--border-subtle); color: #fff; padding: 10px; border-radius: 6px; font-size: 13px;" placeholder="e.g. http://paypal.security-verify.xyz/login">
+            <button class="btn btn-primary" onclick="testUrlSafety()">Analyze URL</button>
+          </div>
+          <div id="net-url-result" style="display: none; padding: 12px; border-radius: 6px; font-size: 13px;"></div>
+        </div>
+      </section>
+
+      <!-- ==================== 7. MULTI-PC FLEET TAB ==================== -->
+      <section id="tab-multipc" class="tab-content">
+        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Multi-PC Fleet Management</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Monitor and manage multiple computers across your home or office local network using the standalone SelfHeal IT Agent.</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="loadFleetData()">Refresh Fleet</button>
+        </div>
+
+        <!-- Fleet Overview Cards -->
+        <div class="card" style="margin-bottom: 20px;">
+          <div class="card-title">Enrolled Fleet Computers (<span id="fleet-count">0</span>)</div>
+          <div id="fleet-grid" class="grid-cards" style="margin-bottom: 0;">
+            <div class="card" style="background: rgba(255,255,255,0.02);">
+              <div style="display: flex; justify-content: space-between;">
+                <b>This PC (Host)</b>
+                <span class="status-indicator"><span class="dot-pulse"></span> Master Server</span>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Receives heartbeats and coordinates health diagnostics.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent Setup Guide Card -->
+        <div class="card">
+          <div class="card-title">Deploy Agent to Another PC</div>
+          <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+            To add another Windows PC to this dashboard, run the lightweight reporting script on that computer:
+            <ol style="margin: 8px 0; padding-left: 20px;">
+              <li>Copy the <code>agent/selfheal_agent.py</code> file to the remote computer.</li>
+              <li>Install dependencies: <code>pip install psutil</code></li>
+              <li>Launch agent pointing to this machine's IP address:
+                <pre style="margin: 6px 0;">python selfheal_agent.py http://&lt;THIS-PC-IP&gt;:5000/api/agent/report &lt;SECRET_TOKEN&gt;</pre>
+              </li>
+            </ol>
+            Current Agent Secret Token: <code id="fleet-token-display">Loading...</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 8. REPORTS TAB ==================== -->
+      <section id="tab-reports" class="tab-content">
+        <div style="margin-bottom: 16px;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Diagnostic Report Generation &amp; Export</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Generate comprehensive, printable PDF diagnostic documentation or export raw JSON telemetry.</span>
+        </div>
+
+        <div class="grid-cards">
+          <div class="card">
+            <div class="card-title">PDF Health Report</div>
+            <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px;">Standard PDF 1.4 Document</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Multi-page report containing full hardware specs, health scores, issues breakdown, top resource consumers, and safety disclosures. Zero external dependencies.
+            </p>
+            <a href="/api/export/pdf" class="btn btn-primary btn-sm">Download PDF Report</a>
+          </div>
+
+          <div class="card">
+            <div class="card-title">JSON Telemetry Dump</div>
+            <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px;">Machine-Readable JSON</div>
+            <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">
+              Raw structured JSON data covering all psutil metrics, disk usage, active network sockets, GPU information, and diagnostic findings.
+            </p>
+            <a href="/api/export/json" class="btn btn-secondary btn-sm">Download JSON Telemetry</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+          <div class="card-title">Current Scan Telemetry Preview</div>
+          <pre id="report-preview-box" style="max-height: 300px; overflow-y: auto;"></pre>
+        </div>
+      </section>
+
+      <!-- ==================== 9. SETTINGS TAB ==================== -->
+      <section id="tab-settings" class="tab-content">
+        <div style="margin-bottom: 16px;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Platform Settings &amp; API Configuration</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Configure LLM API keys, multi-PC agent secrets, and live alert thresholds.</span>
+        </div>
+
+        <div class="card" style="max-width: 680px;">
+          <form id="settings-form" onsubmit="saveSettings(event)">
+            <h4 style="margin: 0 0 14px 0; color: #fff; font-size: 14px;">AI Assistant Providers</h4>
+            
+            <div class="form-group">
+              <label for="cfg-gemini">Google Gemini API Key</label>
+              <input id="cfg-gemini" type="password" placeholder="AIzaSy...">
+              <small>Powers cloud AI assistance via Gemini 1.5 Flash. If blank, local rule-based engine is used.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="cfg-openai">OpenAI API Key</label>
+              <input id="cfg-openai" type="password" placeholder="sk-...">
+              <small>Optional OpenAI GPT-4o-mini support.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="cfg-anthropic">Anthropic API Key</label>
+              <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
+              <small>Optional Claude Sonnet support.</small>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 20px 0;">
+
+            <h4 style="margin: 0 0 14px 0; color: #fff; font-size: 14px;">Multi-PC &amp; Alerts</h4>
+
+            <div class="form-group">
+              <label for="cfg-agent-secret">Multi-PC Agent Secret Token</label>
+              <input id="cfg-agent-secret" type="text" placeholder="Enter secure secret token">
+              <small>Pre-shared secret used by remote agents in <code>Authorization: Bearer &lt;TOKEN&gt;</code>.</small>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label for="cfg-cpu-thresh">CPU Alert Threshold (%)</label>
+                <input id="cfg-cpu-thresh" type="number" min="50" max="99" value="85">
+              </div>
+              <div class="form-group">
+                <label for="cfg-ram-thresh">RAM Alert Threshold (%)</label>
+                <input id="cfg-ram-thresh" type="number" min="50" max="99" value="85">
+              </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary">Save Settings</button>
+              <span id="settings-save-status" style="margin-left: 12px; font-size: 13px; color: var(--emerald-primary);"></span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal: Self-Healing Action Confirmation -->
+  <div id="modal-heal-confirm" class="modal-overlay">
+    <div class="modal-box">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+        <span class="badge badge-high">CONFIRMATION</span>
+        <h3 id="modal-heal-title" style="margin: 0;">Recovery Action</h3>
+      </div>
+      <p id="modal-heal-desc" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+        Are you sure you want to execute this predefined recovery action?
+      </p>
+      <div id="modal-heal-pid-row" style="display: none; margin-top: 12px;">
+        <label style="font-size: 12px; color: #cbd5e1;">Target Process ID (PID):</label>
+        <input id="modal-heal-pid-input" style="width: 100%; padding: 8px; background: var(--bg-input); border: 1px solid var(--border-subtle); color: #fff; border-radius: 5px; margin-top: 4px;">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal('modal-heal-confirm')">Cancel</button>
+        <button id="modal-heal-btn-confirm" class="btn btn-primary">Execute Action</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Hardware Compatibility Tool -->
+  <div id="modal-compatibility" class="modal-overlay">
+    <div class="modal-box" style="max-width: 540px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+        <h3 style="margin: 0;">Hardware Compatibility</h3>
+        <button class="btn btn-secondary btn-sm" onclick="closeModal('modal-compatibility')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 14px;">
+        Test your actual CPU, RAM, and GPU against official hardware requirements:
+      </p>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+        <select id="compat-select" style="flex: 1; background: var(--bg-input); border: 1px solid var(--border-subtle); color: #fff; padding: 8px; border-radius: 6px; font-size: 13px;" onchange="syncCompatInput(this.value)">
+          <option value="">-- Choose Popular Title / Application --</option>
+          <option value="Valorant">Valorant</option>
+          <option value="GTA V">Grand Theft Auto V</option>
+          <option value="Cyberpunk 2077">Cyberpunk 2077</option>
+          <option value="Minecraft">Minecraft</option>
+          <option value="Fortnite">Fortnite</option>
+          <option value="Counter-Strike 2">Counter-Strike 2 (CS2)</option>
+          <option value="Elden Ring">Elden Ring</option>
+          <option value="Blender">Blender 3D</option>
+          <option value="Adobe Premiere Pro">Adobe Premiere Pro</option>
+          <option value="Photoshop">Adobe Photoshop</option>
+          <option value="Android Studio">Android Studio</option>
+          <option value="Docker">Docker Desktop</option>
+          <option value="Unreal Engine">Unreal Engine 5</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+        <input id="compat-custom-input" style="flex: 1; background: var(--bg-input); border: 1px solid var(--border-subtle); color: #fff; padding: 8px; border-radius: 6px; font-size: 13px;" placeholder="Or type any software or game title...">
+        <button class="btn btn-primary btn-sm" onclick="runCompatibilityCheck()">Check Spec</button>
+      </div>
+
+      <div id="compat-results-box" style="display: none; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px; font-size: 13px;"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Defender Scan Confirmation -->
+  <div id="modal-defender-confirm" class="modal-overlay">
+    <div class="modal-box">
+      <h3>Start Windows Defender Scan</h3>
+      <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+        This will initiate an official Windows Defender Quick Scan in the background using PowerShell <code>Start-MpScan -ScanType QuickScan</code>.
+      </p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal('modal-defender-confirm')">Cancel</button>
+        <button class="btn btn-primary" onclick="executeDefenderScan()">Run Scan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/dashboard.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

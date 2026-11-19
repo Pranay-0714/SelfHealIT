@@ -1,0 +1,9 @@
+{"time": "2026-11-20T02:10:32", "event": "action_start", "action": "flush_dns", "target_pid": null}
+{"time": "2026-11-20T02:10:32", "event": "action_done", "ok": true, "action": "flush_dns", "verified": true, "return_code": 0, "output": "Windows IP Configuration\n\nSuccessfully flushed the DNS Resolver Cache.", "message": "Windows DNS Resolver cache was successfully cleared."}
+{"time": "2026-11-20T02:52:16", "event": "test_audit_event", "detail": "unit test log"}
+{"time": "2026-11-20T02:52:16", "event": "action_start", "action": "clean_temp", "target_pid": null}
+{"time": "2026-11-20T02:52:17", "event": "action_done", "ok": true, "action": "clean_temp", "verified": true, "freed_mb": 99.9, "deleted_count": 431, "skipped_locked": 100, "message": "Successfully cleared 99.9 MB of temporary files (431 files cleaned, 100 active/locked files preserved)."}
+{"time": "2026-11-20T02:52:17", "event": "action_start", "action": "restart_unresponsive_app", "target_pid": 0}
+{"time": "2026-11-20T02:52:17", "event": "action_done", "ok": false, "action": "restart_unresponsive_app", "verified": false, "message": "No target PID provided to terminate."}
+{"time": "2026-11-20T03:37:44", "event": "action_start", "action": "empty_recycle_bin", "target_pid": null}
+{"time": "2026-11-20T03:37:45", "event": "action_done", "ok": true, "action": "empty_recycle_bin", "verified": true, "hresult": 0, "message": "Windows Recycle Bin emptied successfully."}

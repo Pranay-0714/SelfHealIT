@@ -1,0 +1,13 @@
+{
+  "gemini_api_key": "",
+  "openai_api_key": "",
+  "anthropic_api_key": "",
+  "default_model": "rule-based",
+  "agent_secret_key": "selfheal-agent-default-secret-token-key",
+  "cpu_alert_threshold": 92,
+  "ram_alert_threshold": 85,
+  "disk_alert_threshold": 90,
+  "monitoring_interval_ms": 2000,
+  "auto_refresh_scan": false,
+  "theme": "dark"
+}
